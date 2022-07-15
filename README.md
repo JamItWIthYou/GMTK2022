@@ -1,4 +1,4 @@
-# > GMTK2022
+# ✏ GMTK2022
 
 <img src="https://raw.githubusercontent.com/JamItWIthYou/GMTK2022/main/GameAssets/Title.png">
 
