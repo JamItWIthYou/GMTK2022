@@ -1,4 +1,5 @@
-# GMTK2022
-2022 Game Jam
+# > GMTK2022
 
-soph was here :3
+<img src="https://raw.githubusercontent.com/JamItWIthYou/GMTK2022/main/GameAssets/Title.png">
+
+> Game Jam 2022
