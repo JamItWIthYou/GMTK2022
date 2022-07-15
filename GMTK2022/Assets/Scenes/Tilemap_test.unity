@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
-    serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
@@ -270,11 +269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d221c0370be3ddf978e77eb0d0f7af1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: a651771aa7d9666669cb2032a51512ad, type: 3}
+  map: {fileID: 2800000, guid: 09fb2cb6912b8634d814ca8d2a46e3ff, type: 3}
   colorMappings:
-  - color: {r: 0, g: 1, b: 0, a: 0}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 8775991130723195282, guid: f0e7db3700962928f98a38a567cc6edd, type: 3}
-  - color: {r: 0, g: 0.9411765, b: 0, a: 0}
+  - color: {r: 1, g: 0, b: 0.029372692, a: 1}
     prefab: {fileID: 6092419275449611585, guid: c3d0811245e8d44b99a71327d20f4682, type: 3}
 --- !u!4 &1789090112
 Transform:
