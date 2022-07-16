@@ -31,9 +31,14 @@ public class shooting : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, rotz);
 
-        if (Input.GetMouseButtonDown(0))
+       
+        
+        if(Input.GetMouseButtonDown(0) && canFire)
         {
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity );
+            
+        Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+        canFire = false;
         }
+
     }
 }
