@@ -274,21 +274,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1264991373}
     - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
-      propertyPath: x
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
-      propertyPath: y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: levelGenerator
       value: 
       objectReference: {fileID: 112623957}
-    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
-      propertyPath: movesRemaining
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6236469982780814364, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: m_Name
       value: Guy
@@ -337,8 +325,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6236469982780814354, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
 --- !u!1001 &854334772
 PrefabInstance:
@@ -357,11 +344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8492416705499253864, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 68.01472
+      value: -165.6
       objectReference: {fileID: 0}
     - target: {fileID: 8492416705499253864, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.467752
+      value: 10.9
       objectReference: {fileID: 0}
     - target: {fileID: 8492416705499253864, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
       propertyPath: m_LocalPosition.z
