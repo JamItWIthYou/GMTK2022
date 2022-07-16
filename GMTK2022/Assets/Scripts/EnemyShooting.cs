@@ -16,11 +16,10 @@ public class EnemyShooting : MonoBehaviour
     public float maxRand;
 
     void Start() {
-        InvokeRepeating("Shoot", 2.0f, 1f);
+        InvokeRepeating("Shoot", 2.0f, 0.01f);
     }
     void Shoot() {
-        createdProj = Instantiate(projectile, transform.position, Quaternion.identity);
-        Debug.Log(CalculateAddForceY(player));
+        createdProj = Instantiate(projectile, transform.position, Quaternion.identity, transform);
         createdProj.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed*Random.Range(minRand, maxRand), CalculateAddForceY(player));
     }
     float CalculateAddForceY(Transform player) {
