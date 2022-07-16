@@ -4,39 +4,34 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
+    public LevelGenerator levelGenerator;
 
-    private float moveSpeed;
-    private float moveHorizontal;
+    public bool isOnHalfBlock;
+    public int x;
+    public int y;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
-
-        moveSpeed = 1f;
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-
-
-    }
-
-    void FixedUpdate()
-    {
-        if(moveHorizontal > 0f || moveHorizontal < 0f)
-        {
-            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
+    void Update() {
+        if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
+            if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) { y--; };
         }
-        
+        if(Input.GetKeyDown("a")) {
+            if (levelGenerator.tileCollidables[x-1, y]==CollisionType.None) {
+                if (levelGenerator.tileCollidables[x-1, y-1]==CollisionType.Half) {
+                    isOnHalfBlock = true;
+                } else {
+                    isOnHalfBlock = false;
+                }
+                x--;
+            } else if (levelGenerator.tileCollidables[x-1, y]==CollisionType.Half) {
+                isOnHalfBlock = true;
+                x--;
+                y++;
+            }
+        }
+        transform.position = new Vector3(x, y + (isOnHalfBlock?(-0.5f):0), 0);
     }
 }
