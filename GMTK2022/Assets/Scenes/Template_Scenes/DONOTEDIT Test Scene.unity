@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &445941356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
+  m_PrefabInstance: {fileID: 1088911366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221c0370be3ddf978e77eb0d0f7af1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509373577
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +229,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 822766944}
+    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
+      propertyPath: levelGenerator
+      value: 
+      objectReference: {fileID: 445941356}
     - target: {fileID: 6236469982780814364, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: m_Name
       value: Guy
@@ -228,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236469982780814367, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 62.48
       objectReference: {fileID: 0}
     - target: {fileID: 6236469982780814367, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: m_LocalPosition.y
