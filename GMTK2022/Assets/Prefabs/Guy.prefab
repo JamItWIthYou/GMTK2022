@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c310d39a12b81346bd9190f22ec991c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelGenerator: {fileID: 0}
   x: 0
   y: 0
+  movesRemaining: 5
 --- !u!114 &6236469982780814354
 MonoBehaviour:
   m_ObjectHideFlags: 0
