@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-
     public Texture2D map;
     public Tile[] colorMappings;
     public CollisionType[,] tileCollidables;
 
+    private GameController gameController;
+
     void Start()
     {
+        gameController = GameController.getGameController();
         GenerateLevel();
     }
 
     void GenerateLevel() {
-        
+        tileCollidables = new CollisionType[map.width, map.height];
         for (int x=0; x<map.width;x++) {
-            tileCollidables = new CollisionType[map.width, map.height];
+            
             for (int y=0; y<map.height ;y++) {
                 GenerateTile(x, y);
             }
@@ -31,9 +33,9 @@ public class LevelGenerator : MonoBehaviour
                 Vector2 position = new Vector2(x,y);
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
                 tileCollidables[x, y] = colorMapping.collisionType;
-            } else {
-                tileCollidables[x, y] = CollisionType.None;
+                return;
             }
         }
+        tileCollidables[x,y] = CollisionType.None;
     }
 }

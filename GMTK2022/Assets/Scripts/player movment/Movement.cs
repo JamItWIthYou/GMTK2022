@@ -4,39 +4,38 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
+    public LevelGenerator levelGenerator;
+    public int x;
+    public int y;
 
-    private float moveSpeed;
-    private float moveHorizontal;
+    public int movesRemaining;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
-
-        moveSpeed = 1f;
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-
-
-    }
-
-    void FixedUpdate()
-    {
-        if(moveHorizontal > 0f || moveHorizontal < 0f)
-        {
-            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
+    void Update() {
+        if (movesRemaining>0) {
+            Controls();
         }
-        
+        Gravity();
+        transform.position = new Vector3(x, y, 0);
+    }
+
+    void Controls () {
+        if(Input.GetKeyDown("a")) {
+            if (levelGenerator.tileCollidables[x-1, y]==CollisionType.None) {x--;movesRemaining--;}
+            else if (levelGenerator.tileCollidables[x-1, y]==CollisionType.Full) {
+                if(levelGenerator.tileCollidables[x-1, y+1]==CollisionType.None) {x--;y++;movesRemaining--;}
+            }
+        }
+        else if(Input.GetKeyDown("d")) {
+            if (levelGenerator.tileCollidables[x+1, y]==CollisionType.None) {x++;movesRemaining--;}
+            else if (levelGenerator.tileCollidables[x+1, y]==CollisionType.Full) {
+                if(levelGenerator.tileCollidables[x+1, y+1]==CollisionType.None) {x++;y++;movesRemaining--;}
+            }
+        }
+    }
+
+    void Gravity() {
+        if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
+            if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) {y--;};
+        }
     }
 }
