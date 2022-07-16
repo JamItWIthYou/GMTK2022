@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainmenu.unity
     guid: 7c80acc4512ad6f4987c542008387d91
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Template_Scenes/DONOTEDIT Test Scene.unity
     guid: f05dbb9e82e46a54299a337fba923d31
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Movement_Test.unity
     guid: 4d0c683dba1a7f44db4c556d01b3d604
   m_configObjects: {}
