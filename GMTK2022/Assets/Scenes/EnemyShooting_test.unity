@@ -316,11 +316,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1449751791}
+  levelGenerator: {fileID: 445941356}
   projectile: {fileID: 1111934039014809101, guid: 15e5a8b7223afb943885b8a2fb965968, type: 3}
   createdProj: {fileID: 1111934039014809101, guid: 15e5a8b7223afb943885b8a2fb965968, type: 3}
   shootSpeed: 10
-  minRand: 0.89
-  maxRand: 1.105
+  minShootRand: 0.9
+  maxShootRand: 1.2
+  x: 2
+  y: 13
+  moveRandomness: 0.504
+  turnsLeft: 10
 --- !u!1001 &798735103
 PrefabInstance:
   m_ObjectHideFlags: 0
