@@ -328,14 +328,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
-      propertyPath: x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
-      propertyPath: y
-      value: 20
-      objectReference: {fileID: 0}
+    - target: {fileID: 1278914266, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 509373579}
     - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: levelGenerator
       value: 
@@ -404,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: colorMappings.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 3130923078255925276, guid: 36c1378d85f8d874e9f901084d04fddc, type: 3}
+      objectReference: {fileID: 5515708911973400615, guid: bf290a69b7d78ff4cba6d21f5451bfa2, type: 3}
     - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: colorMappings.Array.data[1].prefab
       value: 
@@ -418,8 +414,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
-      propertyPath: colorMappings.Array.data[0].color.r
+      propertyPath: colorMappings.Array.data[0].color.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
+      propertyPath: colorMappings.Array.data[0].color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: colorMappings.Array.data[1].color.b
@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: colorMappings.Array.data[0].collisionType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3040719380160666655, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: m_Name

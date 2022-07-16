@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 663793658}
   - component: {fileID: 663793660}
   m_Layer: 0
-  m_Name: bullettransform
+  m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663793657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.291, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1278914265}
   - component: {fileID: 1278914266}
   m_Layer: 0
-  m_Name: rotate point
+  m_Name: ProjectileControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,10 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3500e0ee5d117be4f8a5948c3e992099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5878052885619162584, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
+  mainCamera: {fileID: 0}
+  projectileToSpawn: {fileID: 5878052885619162584, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
   bulletTransform: {fileID: 663793658}
   canFire: 1
-  timeBetweenFiring: 0
+  createdProjectile: {fileID: 5878052885619162584, guid: aaaed63119fbe2f42848336b83861a67, type: 3}
+  fireForce: 50
 --- !u!1 &6236469982780814364
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelGenerator: {fileID: 0}
-  x: 64
-  y: 15
+  x: 60
+  y: 20
   movesRemaining: 5

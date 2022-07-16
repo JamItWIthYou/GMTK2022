@@ -11,7 +11,6 @@ public class Movement : MonoBehaviour
     public int movesRemaining;
 
     void Update() {
-        Debug.Log(levelGenerator);
         if (movesRemaining>0) {
             Controls();
         }
