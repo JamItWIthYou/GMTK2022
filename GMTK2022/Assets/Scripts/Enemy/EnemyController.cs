@@ -78,7 +78,7 @@ public class EnemyController : Character
         }
     }
     void Shoot() {
-        createdProj = Instantiate(projectile, transform.position, Quaternion.identity, transform);
+        createdProj = Instantiate(projectile, transform.position, Quaternion.identity, levelGenerator.transform);
         createdProj.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed*Random.Range(minShootRand, maxShootRand), CalculateAddForceY(player));
     }
     float CalculateAddForceY(Transform player) {
