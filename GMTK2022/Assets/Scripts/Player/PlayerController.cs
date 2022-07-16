@@ -2,22 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Character
 {
     public LevelGenerator levelGenerator;
+    public PlayerShootingScript playerShootingScript;
     public int x;
     public int y;
+    public int movesEachTurn;
 
-    public int movesRemaining;
+    private int movesRemaining;
 
-    void Update() {
-        if (movesRemaining>0) {
-            Controls();
+    void Start () {
+        turnController.AddToTurnControl(this);
+    }
+    void Update () {
+        if(turnController.currentCharacter == this){
+            if (movesRemaining>0) Controls();
+            else if (!playerShootingScript.canFire) turnController.EndTurn(this);
         }
         Gravity();
         transform.position = new Vector3(x, y, 0);
+        
     }
-
+    public override void BeginTurn() {
+        Debug.Log("Player turn");
+        movesRemaining=movesEachTurn;
+        playerShootingScript.canFire = true;
+    }
     void Controls () {
         if(Input.GetKeyDown("a")) {
             if (levelGenerator.tileCollidables[x-1, y]==CollisionType.None) {x--;movesRemaining--;}
@@ -32,7 +43,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     void Gravity() {
         if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
             if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) {y--;};

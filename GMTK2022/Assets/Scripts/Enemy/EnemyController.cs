@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Character
 {
     // Might need refactor for GameController
     public Transform player;
@@ -23,25 +23,41 @@ public class EnemyController : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float moveRandomness;
 
-    public int turnsLeft;
+    private int movesLeft;
+    public int movesEachTurn;
+    public float moveInterval;
+
+    private float timeSinceMove;
 
     void Start() {
-        InvokeRepeating("Move", 2.0f, 0.1f);
+        turnController.AddToTurnControl(this);
     }
     
     void Update () {
+        if (this == turnController.currentCharacter){
+            timeSinceMove += Time.deltaTime;
+            if (timeSinceMove>moveInterval) {
+                timeSinceMove = 0;
+                if(movesLeft>0){
+                    Move();
+                    movesLeft--;
+                } else if (movesLeft==0) {
+                    Shoot();
+                    movesLeft--;
+                } else {
+                    turnController.EndTurn(this);
+                }
+            }
+        }
         Gravity();
         transform.position = new Vector2(x, y);
     }
 
     void Move () {
-        if(turnsLeft>0){
-            if(Random.value > moveRandomness){
-                if (player.position.x > transform.position.x) {MoveRight();} else {MoveLeft();}
-            } else {
-                if(Random.value < 0.5f) {MoveRight();} else {MoveLeft();}
-            }
-            turnsLeft--;
+        if(Random.value > moveRandomness){
+            if (player.position.x > transform.position.x) {MoveRight();} else {MoveLeft();}
+        } else {
+            if(Random.value < 0.5f) {MoveRight();} else {MoveLeft();}
         }
     }
     void MoveLeft() {
@@ -82,5 +98,9 @@ public class EnemyController : MonoBehaviour
     }
     Vector2 CalculatePlayerRelativeDistance(Transform player) {
         return player.position - transform.position;
+    }
+    public override void BeginTurn() {
+        movesLeft = movesEachTurn;
+        Debug.Log("Enemy turn");
     }
 }
