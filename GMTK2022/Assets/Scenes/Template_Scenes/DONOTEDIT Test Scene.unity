@@ -571,7 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 822766944}
   bulletTransform: {fileID: 663793658}
-  canFire: 0
+  canFire: 1
   timeBetweenFiring: 0
 --- !u!1001 &2336288478378492574
 PrefabInstance:
