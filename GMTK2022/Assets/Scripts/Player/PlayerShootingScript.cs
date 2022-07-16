@@ -23,7 +23,7 @@ public class PlayerShootingScript : MonoBehaviour
         // Set rotation in order to change where the spawn indicator is
         transform.rotation = Quaternion.Euler(0, 0, zrotation);
 
-        if(Input.GetMouseButtonDown(0) && canFire)
+        if(Input.GetMouseButtonDown(0) && canFire && !Pause.GameIsPaused)
         {
             createdProjectile = Instantiate(projectileToSpawn, bulletTransform.position, Quaternion.identity);
             Rigidbody2D projRB = createdProjectile.GetComponent<Rigidbody2D>();
