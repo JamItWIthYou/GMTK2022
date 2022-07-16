@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3040719380160666654}
   m_Layer: 0
   m_Name: LevelGenerator
-  m_TagString: Untagged
+  m_TagString: LevelGenerator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 2800000, guid: 3791599a734af374581dd4fb0130e7b4, type: 3}
   colorMappings:
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 5515708911973400615, guid: bf290a69b7d78ff4cba6d21f5451bfa2, type: 3}
+    collisionType: 0
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 8775991130723195282, guid: f0e7db3700962928f98a38a567cc6edd, type: 3}
-    collisionType: 0
-  - color: {r: 1, g: 0, b: 0.029372692, a: 1}
-    prefab: {fileID: 6092419275449611585, guid: c3d0811245e8d44b99a71327d20f4682, type: 3}
     collisionType: 0

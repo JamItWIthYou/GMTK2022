@@ -9,8 +9,8 @@ public class PlayerShootingScript : MonoBehaviour
     public Transform bulletTransform;
     public bool canFire;
     public GameObject createdProjectile;
-    public float fireForce; 
-
+    public float fireForce;
+    public LevelGenerator levelGenerator;
 
     void Update()
     {

@@ -22,11 +22,9 @@ public class EnemyController : Character
     public int y;
     [Range(0.0f, 1.0f)]
     public float moveRandomness;
-
     private int movesLeft;
     public int movesEachTurn;
     public float moveInterval;
-
     private float timeSinceMove;
 
     void Start() {
@@ -55,9 +53,9 @@ public class EnemyController : Character
 
     void Move () {
         if(Random.value > moveRandomness){
-            if (player.position.x > transform.position.x) {MoveRight();} else {MoveLeft();}
+            if (player.position.x > transform.position.x) MoveRight(); else MoveLeft();
         } else {
-            if(Random.value < 0.5f) {MoveRight();} else {MoveLeft();}
+            if(Random.value < 0.5f) MoveRight(); else MoveLeft();
         }
     }
     void MoveLeft() {

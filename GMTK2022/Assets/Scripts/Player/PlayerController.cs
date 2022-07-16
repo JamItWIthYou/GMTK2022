@@ -9,7 +9,6 @@ public class PlayerController : Character
     public int x;
     public int y;
     public int movesEachTurn;
-
     private int movesRemaining;
 
     void Start () {
@@ -22,12 +21,6 @@ public class PlayerController : Character
         }
         Gravity();
         transform.position = new Vector3(x, y, 0);
-        
-    }
-    public override void BeginTurn() {
-        Debug.Log("Player turn");
-        movesRemaining=movesEachTurn;
-        playerShootingScript.canFire = true;
     }
     void Controls () {
         if(Input.GetKeyDown("a")) {
@@ -47,5 +40,10 @@ public class PlayerController : Character
         if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
             if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) {y--;};
         }
+    }
+    public override void BeginTurn() {
+        Debug.Log("Player turn");
+        movesRemaining=movesEachTurn;
+        playerShootingScript.canFire = true;
     }
 }
