@@ -8,6 +8,7 @@ public class EnemyController : Character
     public Transform player;
     public LevelGenerator levelGenerator;
 
+
     // Shoot-related
     public GameObject projectile;
     public GameObject createdProj;

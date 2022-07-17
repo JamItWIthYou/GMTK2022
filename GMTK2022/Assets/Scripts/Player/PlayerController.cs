@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : Character
 {
     public LevelGenerator levelGenerator;
-    public PlayerShootingScript playerShootingScript;
+    public PlayerShootingScript playerShootingScript;    
     public int x;
     public int y;
     public int movesEachTurn;
@@ -16,7 +16,11 @@ public class PlayerController : Character
         Debug.Log(this);
     }
     void Update () {
-        if(turnController.currentCharacter == this){
+        if(this == turnController.currentCharacter){
+            if(isDead()){
+                turnController.RemoveFromTurnControl(this);
+                Destroy(gameObject);
+            }
             if (movesRemaining>0) Controls();
             else if (!playerShootingScript.canFire) turnController.EndTurn(this);
         }

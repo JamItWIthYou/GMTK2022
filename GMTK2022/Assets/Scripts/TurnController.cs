@@ -8,7 +8,7 @@ public class TurnController : MonoBehaviour
     [HideInInspector] public List<Character> characterList;
     [HideInInspector] public Character currentCharacter;
     
-    [Range(0, 3)]
+    [Range(0, 20)]
     public int level;
     public PlayerController p1;
 
@@ -26,10 +26,10 @@ public class TurnController : MonoBehaviour
         if(currentCharacter == character) EndTurn(character);
         characterList.Remove(character);
         if (characterList.Count<=1){
-            if (true){ //Placeholder. Need to check if the last character is the player
-                endRound(true);
+            if (characterList [0] is PlayerController){ 
+                SceneManager.LoadScene(level+1);
             }else{
-                endRound(false);
+                SceneManager.LoadScene(0);
             }
             
         }
@@ -52,12 +52,5 @@ public class TurnController : MonoBehaviour
         currentCharacter = characterList[0];
         characterList[0].BeginTurn();
     }
-    private void endRound(bool victory){
-        if (victory){
-            SceneManager.LoadScene(level+1);
-        }
-        else{
-            SceneManager.LoadScene(0);
-        }
-    }
+  
 }
