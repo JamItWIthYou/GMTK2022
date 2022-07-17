@@ -29,7 +29,7 @@ public class TurnController : MonoBehaviour
             if (characterList [0] is PlayerController){ 
                 SceneManager.LoadScene(level+1);
             }else{
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(4);
             }
             
         }
