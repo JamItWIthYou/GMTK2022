@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1264991379}
   - component: {fileID: 2540546925778607106}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGenerator: {fileID: 0}
   turnController: {fileID: 0}
-  explosionRadius: 5
+  eRad: 5
   damage: 5

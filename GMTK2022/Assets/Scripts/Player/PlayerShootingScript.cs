@@ -29,6 +29,8 @@ public class PlayerShootingScript : MonoBehaviour
             Rigidbody2D projRB = createdProjectile.GetComponent<Rigidbody2D>();
             projRB.velocity = new Vector2(mouseRelDistance.x, mouseRelDistance.y).normalized * fireForce;
             canFire = false;
+            ProjectileControl pc = createdProjectile.GetComponent<ProjectileControl>();
+            pc.eRad = 2; // Change the variables of created projectiles here
         }
 
     }
