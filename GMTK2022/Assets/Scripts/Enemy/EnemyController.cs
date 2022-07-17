@@ -46,6 +46,8 @@ public class EnemyController : Character
                         movesLeft--;
                     } else if (movesLeft==0) {
                         Shoot();
+                        Shoot();
+                        Shoot();
                         movesLeft--;
                     } else {
                         turnController.EndTurn(this);
@@ -78,12 +80,17 @@ public class EnemyController : Character
     }
     void Gravity() {
         if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
-            if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) {y--;};
+            if (levelGenerator.tileCollidables[x, y-3]==CollisionType.None) {y--;};
+
+            
         }
     }
     void Shoot() {
         createdProj = Instantiate(projectile, transform.position, Quaternion.identity, levelGenerator.transform);
-        createdProj.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed*Random.Range(minShootRand, maxShootRand), CalculateAddForceY(player));
+        createdProj.GetComponent<Rigidbody2D>().velocity = new Vector2((shootSpeed*Random.Range(minShootRand, maxShootRand)), CalculateAddForceY(player));
+        Debug.Log(shootSpeed*Random.Range(minShootRand, maxShootRand));
+
+
     }
     float CalculateAddForceY(Transform player) {
         Vector2 relDist = CalculatePlayerRelativeDistance(player);
@@ -98,7 +105,9 @@ public class EnemyController : Character
         float c = a*x1*x1+b*x1-y1;
         // Dy/Dx
         float Dy = (2*a*x1+b)/shootSpeed;
+        Debug.Log(Dy);
         return Dy;
+        
     }
     Vector2 CalculatePlayerRelativeDistance(Transform player) {
         return player.position - transform.position;

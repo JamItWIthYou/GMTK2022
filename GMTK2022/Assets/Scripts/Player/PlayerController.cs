@@ -43,7 +43,7 @@ public class PlayerController : Character
     }
     void Gravity() {
         if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
-            if (levelGenerator.tileCollidables[x, y-1]==CollisionType.None) {y--;};
+            if (levelGenerator.tileCollidables[x, y-3]==CollisionType.None) {y--;};
         }
     }
     public override void BeginTurn() {
