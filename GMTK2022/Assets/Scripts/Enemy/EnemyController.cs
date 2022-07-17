@@ -33,17 +33,22 @@ public class EnemyController : Character
     
     void Update () {
         if (this == turnController.currentCharacter){
-            timeSinceMove += Time.deltaTime;
-            if (timeSinceMove>moveInterval) {
-                timeSinceMove = 0;
-                if(movesLeft>0){
-                    Move();
-                    movesLeft--;
-                } else if (movesLeft==0) {
-                    Shoot();
-                    movesLeft--;
-                } else {
-                    turnController.EndTurn(this);
+            if (isDead()){
+                turnController.RemoveFromTurnControl(this);
+                Destroy(gameObject);
+            }else{
+                timeSinceMove += Time.deltaTime;
+                if (timeSinceMove>moveInterval) {
+                    timeSinceMove = 0;
+                    if(movesLeft>0){
+                        Move();
+                        movesLeft--;
+                    } else if (movesLeft==0) {
+                        Shoot();
+                        movesLeft--;
+                    } else {
+                        turnController.EndTurn(this);
+                    }
                 }
             }
         }

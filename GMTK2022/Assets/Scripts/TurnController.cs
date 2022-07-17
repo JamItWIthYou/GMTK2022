@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TurnController : MonoBehaviour
 {
     [HideInInspector] public List<Character> characterList;
     [HideInInspector] public Character currentCharacter;
+    
+    [Range(0, 3)]
+    public int level;
+    public PlayerController p1;
+
     void Awake() {
         characterList =  new List<Character>();
     }
@@ -19,6 +25,14 @@ public class TurnController : MonoBehaviour
     public void RemoveFromTurnControl(Character character) {
         if(currentCharacter == character) EndTurn(character);
         characterList.Remove(character);
+        if (characterList.Count<=1){
+            if (true){ //Placeholder. Need to check if the last character is the player
+                endRound(true);
+            }else{
+                endRound(false);
+            }
+            
+        }
     }
     public void EndTurn (Character character) {
         if (currentCharacter == character){
@@ -37,5 +51,13 @@ public class TurnController : MonoBehaviour
     private void startRound() {
         currentCharacter = characterList[0];
         characterList[0].BeginTurn();
+    }
+    private void endRound(bool victory){
+        if (victory){
+            SceneManager.LoadScene(level+1);
+        }
+        else{
+            SceneManager.LoadScene(0);
+        }
     }
 }
