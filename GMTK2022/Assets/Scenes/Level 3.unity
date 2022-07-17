@@ -402,6 +402,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
+      propertyPath: hitPoints
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: turnPriority
       value: 10
       objectReference: {fileID: 0}
