@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList: []
   currentCharacter: {fileID: 0}
-  level: 2
+  level: 1
   p1: {fileID: 0}
 --- !u!4 &453034368
 Transform:
@@ -386,11 +386,14 @@ MonoBehaviour:
   shootSpeed: 30
   minShootRand: 0.9
   maxShootRand: 1.2
-  x: 10
+  gravityX: 3
+  x: 60
   y: 24
+  i: 1
   moveRandomness: 0.88
+  shotsFired: 2
   movesEachTurn: 3
-  moveInterval: 1
+  moveInterval: 0.4
 --- !u!1001 &798735103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 445941356}
     - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: x
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6236469982780814353, guid: 3dea3bad2e266654faec2220a7b4e3b0, type: 3}
       propertyPath: y
