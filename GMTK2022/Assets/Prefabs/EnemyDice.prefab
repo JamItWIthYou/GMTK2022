@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1111934039014809102}
   - component: {fileID: 1111934039014809103}
   - component: {fileID: 1111934039014809100}
+  - component: {fileID: 3315118909463101494}
   m_Layer: 0
   m_Name: EnemyDice
   m_TagString: Untagged
@@ -114,7 +115,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111934039014809101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -123,3 +124,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3315118909463101494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111934039014809101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47749f28ba15ab4a9b8caa361784b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGenerator: {fileID: 0}
+  turnController: {fileID: 0}
+  eRad: 5
+  damage: 5
