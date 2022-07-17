@@ -17,12 +17,17 @@ public class EnemyController : Character
     public float minShootRand;
     [Range(1.0f, 2.0f)]
     public float maxShootRand;
+    [Range(1, 20)]
+    public int gravityX;
 
     // Movement-related
     public int x;
     public int y;
+    public int i = 1;
     [Range(0.0f, 1.0f)]
     public float moveRandomness;
+    [Range(1, 10)]
+    public int shotsFired;
     private int movesLeft;
     public int movesEachTurn;
     public float moveInterval;
@@ -45,12 +50,16 @@ public class EnemyController : Character
                         Move();
                         movesLeft--;
                     } else if (movesLeft==0) {
-                        Shoot();
-                        Shoot();
-                        Shoot();
+                        while(i<=shotsFired){
+                            Shoot();
+                            i++;
+                        }
+                            
+
                         movesLeft--;
                     } else {
                         turnController.EndTurn(this);
+                        i=0;
                     }
                 }
             }
@@ -80,7 +89,7 @@ public class EnemyController : Character
     }
     void Gravity() {
         if (y-1 < levelGenerator.tileCollidables.GetLength(1)) {
-            if (levelGenerator.tileCollidables[x, y-3]==CollisionType.None) {y--;};
+            if (levelGenerator.tileCollidables[x, y-gravityX]==CollisionType.None) {y--;};
 
             
         }
