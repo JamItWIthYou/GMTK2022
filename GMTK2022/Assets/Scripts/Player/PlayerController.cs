@@ -13,6 +13,7 @@ public class PlayerController : Character
 
     void Start () {
         turnController.AddToTurnControl(this);
+        Debug.Log(this);
     }
     void Update () {
         if(turnController.currentCharacter == this){
