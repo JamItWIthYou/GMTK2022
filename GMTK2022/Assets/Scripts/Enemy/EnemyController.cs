@@ -46,6 +46,8 @@ public class EnemyController : Character
                         movesLeft--;
                     } else if (movesLeft==0) {
                         Shoot();
+                        Shoot();
+                        Shoot();
                         movesLeft--;
                     } else {
                         turnController.EndTurn(this);

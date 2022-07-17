@@ -138,5 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGenerator: {fileID: 0}
   turnController: {fileID: 0}
-  eRad: 5
-  damage: 5
+  eRad: 1
+  damage: 2

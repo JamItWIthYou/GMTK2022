@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList: []
   currentCharacter: {fileID: 0}
-  level: 1
+  level: 4
   p1: {fileID: 0}
 --- !u!4 &453034368
 Transform:
