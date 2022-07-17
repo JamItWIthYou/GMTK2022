@@ -8,7 +8,7 @@ public class ProjectileControl : MonoBehaviour
     public TurnController turnController;
     [Range(0.0f, 5.0f)]
     public float eRad;
-    [Range(0, 5)]
+    [Range(0, 10)]
     public int damage;
     void Start() {
         levelGenerator = GameObject.FindWithTag("LevelGenerator").GetComponent<LevelGenerator>();

@@ -248,7 +248,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 35
+  orthographic size: 28.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -272,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509373577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64, y: 8, z: -10}
+  m_LocalPosition: {x: 63.5, y: 8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -495,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3040719380160666654, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 2800000, guid: 3791599a734af374581dd4fb0130e7b4, type: 3}
     - target: {fileID: 3040719380160666655, guid: e97fcaa09237c63478687e2aac5503da, type: 3}
       propertyPath: m_Name
       value: LevelGenerator
